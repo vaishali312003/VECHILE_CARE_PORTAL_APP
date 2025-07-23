@@ -1,0 +1,8 @@
+com\example\vehicleportal\servlet\AddVehicleServlet.class
+com\example\vehicleportal\servlet\LoginServlet.class
+com\example\vehicleportal\servlet\LogoutServlet.class
+com\example\vehicleportal\util\DBConnection.class
+com\example\vehicleportal\servlet\DeleteVehicleServlet.class
+com\example\vehicleportal\servlet\ClientRegisterServlet.class
+com\example\vehicleportal\servlet\UpdateVehicleServlet.class
+com\example\vehicleportal\servlet\AdminLoginServlet.class
