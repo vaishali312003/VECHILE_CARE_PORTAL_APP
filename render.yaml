@@ -10,6 +10,7 @@ services:
       - fromGroup: VEHICLE_DB_SECRETS
 
 databases:
-  - name: VehicleDB
+  - name: vehicle-management
     engine: postgres
     plan: free
+
