@@ -4,7 +4,7 @@ services:
     env: java
     plan: free
     buildCommand: mvn clean package
-    startCommand: java -jar target/your-app.jar
+    startCommand: java -jar target/VECHILE_CARE_PORTAL_APP.jar
     envVars:
       - key: DATABASE_URL
         fromDatabase:
