@@ -1,12 +1,8 @@
 services:
   - type: web
     name: Vaishanova-Web
-  
     plan: free
     buildCommand: mvn clean package
     startCommand: java -jar target/VECHILE_CARE_PORTAL_APP.jar
     envVars:
       - fromGroup: VEHICLE_DB_SECRETS
-
-
-
