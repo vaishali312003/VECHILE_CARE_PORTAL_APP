@@ -3,6 +3,6 @@ services:
     name: Vaishanova-Web
     plan: free
     buildCommand: mvn clean package
-    startCommand: java -jar target/VECHILE_CARE_PORTAL_APP.jar
+    startCommand: ./dockerfile
     envVars:
       - fromGroup: VEHICLE_DB_SECRETS
