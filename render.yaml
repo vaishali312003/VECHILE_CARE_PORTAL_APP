@@ -10,5 +10,6 @@ services:
 
 databases:
   - name: vehicle-management
-    engine: postgres
+
     plan: free
+
