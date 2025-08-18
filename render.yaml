@@ -1,9 +1,10 @@
 services:
   - type: web
     name: Vaishanova-Web
-    env: java20   # closest supported by Render to your local Java 21
+    env: java21  # closest supported by Render to your local Java 21
     plan: free
     buildCommand: mvn clean package
     startCommand: java -jar target/VECHILE_CARE_PORTAL_APP.jar
     envVars:
       - fromGroup: VEHICLE_DB_SECRETS
+
