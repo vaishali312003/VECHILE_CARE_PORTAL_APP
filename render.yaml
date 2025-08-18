@@ -1,10 +1,16 @@
 services:
   - type: web
     name: Vaishanova-Web
-    env: java
+    env: java17
     plan: free
     buildCommand: mvn clean package
     startCommand: java -jar target/VECHILE_CARE_PORTAL_APP.jar
     envVars:
-      - key: DATABASE_URL
-        value: "postgresql://root:Le3SmqhmwlE9OkUWe0DE7MUenE5wyEmu@dpg-d2h1mrn5r7bs73fk9ef0-a.oregon-postgres.render.com/vehicle_management_ntax"
+      - key: DB_HOST
+        fromEnvironment: DB_HOST
+      - key: DB_USER
+        fromEnvironment: DB_USER
+      - key: DB_PASSWORD
+        fromEnvironment: DB_PASSWORD
+      - key: DB_PORT
+        fromEnvironment: DB_PORT
