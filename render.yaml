@@ -1,17 +1,14 @@
 services:
   - type: web
     name: Vaishanova-Web
-    runtime: docker          # required for Blueprints
+    runtime: docker
     plan: free
     buildCommand: mvn clean package
     dockerfilePath: ./dockerfile
-    startCommand: java -jar target/VECHILE_CARE_PORTAL_APP.jar
     envVars:
       - fromGroup: VEHICLE_DB_SECRETS
 
 databases:
   - name: vehicle-management
-   
+    engine: postgres
     plan: free
-
-
