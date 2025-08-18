@@ -6,3 +6,4 @@ com\example\vehicleportal\servlet\DeleteVehicleServlet.class
 com\example\vehicleportal\servlet\ClientRegisterServlet.class
 com\example\vehicleportal\servlet\UpdateVehicleServlet.class
 com\example\vehicleportal\servlet\AdminLoginServlet.class
+com\example\vehicleportal\filter\AuthenticationFilter.class

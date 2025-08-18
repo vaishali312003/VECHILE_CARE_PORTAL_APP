@@ -5,30 +5,27 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <!-- === Security constraint for dashboard === -->
-  <security-constraint>
-    <display-name>Protected Area</display-name>
-    <web-resource-collection>
-      <web-resource-name>Dashboard</web-resource-name>
-      <url-pattern>/dashboard.jsp</url-pattern>
-      <url-pattern>/adminDashboard.jsp</url-pattern>
-      <http-method>GET</http-method>
-      <http-method>POST</http-method>
-    </web-resource-collection>
-    <!-- If you use auth, add auth-constraint here -->
-  </security-constraint>
+  <display-name>Vehicle Care Portal</display-name>
+
+  <!-- Welcome file -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <!-- Session timeout -->
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
 
   <!-- === Mime mappings === -->
   <mime-mapping>
     <extension>css</extension>
     <mime-type>text/css</mime-type>
   </mime-mapping>
-
   <mime-mapping>
     <extension>js</extension>
     <mime-type>application/javascript</mime-type>
   </mime-mapping>
-
   <mime-mapping>
     <extension>png</extension>
     <mime-type>image/png</mime-type>
@@ -90,6 +87,15 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>VehicleDetailsServlet</servlet-name>
+    <servlet-class>com.example.vehicleportal.servlet.VehicleDetailsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VehicleDetailsServlet</servlet-name>
+    <url-pattern>/vehicleDetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>LogoutServlet</servlet-name>
     <servlet-class>com.example.vehicleportal.servlet.LogoutServlet</servlet-class>
   </servlet>
@@ -97,5 +103,9 @@
     <servlet-name>LogoutServlet</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+
+
+
+
 
 </web-app>
