@@ -1,0 +1,42 @@
+FROM tomcat:9.0-jdk11
+
+# Set maintainer information
+LABEL maintainer="Vehicle Portal Team"
+LABEL description="Vehicle Care Portal with PostgreSQL integration"
+
+# Remove default webapps and copy your application
+RUN rm -rf /usr/local/tomcat/webapps/*
+COPY target/ROOT.war /usr/local/tomcat/webapps/
+
+# PostgreSQL database configuration for Render deployment
+ENV DB_URL=jdbc:postgresql://dpg-d2h1mrn5r7bs73fk9ef0-a.oregon-postgres.render.com:5432/vehicle_management_ntax \
+    DB_HOST=dpg-d2h1mrn5r7bs73fk9ef0-a.oregon-postgres.render.com \
+    DB_PORT=5432 \
+    DB_NAME=vehicle_management_ntax \
+    DB_USER=root \
+    DB_PASSWORD=Le3SmqhmwlE9OkUWe0DE7MUenE5wyEmu \
+    DB_DRIVER=org.postgresql.Driver
+
+# Application configuration
+ENV CATALINA_OPTS="-Xmx512m -Xms256m" \
+    JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom" \
+    TZ=UTC
+
+# Download and install PostgreSQL JDBC driver
+RUN curl -L https://jdbc.postgresql.org/download/postgresql-42.6.0.jar \
+    -o /usr/local/tomcat/lib/postgresql-42.6.0.jar
+
+# Create application directories
+RUN mkdir -p /usr/local/tomcat/logs && \
+    mkdir -p /usr/local/tomcat/temp && \
+    chmod -R 755 /usr/local/tomcat
+
+# Health check to ensure the application is running
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8080/ || exit 1
+
+# Expose the port that Tomcat runs on
+EXPOSE 8080
+
+# Start Tomcat
+CMD ["catalina.sh", "run"]
