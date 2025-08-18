@@ -1,16 +1,9 @@
 services:
   - type: web
     name: Vaishanova-Web
-    env: java17
+    env: java-17
     plan: free
     buildCommand: mvn clean package
     startCommand: java -jar target/VECHILE_CARE_PORTAL_APP.jar
     envVars:
-      - key: DB_HOST
-        fromEnvironment: DB_HOST
-      - key: DB_USER
-        fromEnvironment: DB_USER
-      - key: DB_PASSWORD
-        fromEnvironment: DB_PASSWORD
-      - key: DB_PORT
-        fromEnvironment: DB_PORT
+      - fromGroup: VEHICLE_DB_SECRETS
