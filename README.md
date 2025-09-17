@@ -10,7 +10,7 @@ Vehicle Care Portal App is a **Java web application** for managing vehicle servi
 
 ## 🌐 Live Demo
 
-Access the deployed Vehicle Care Portal App here: [**Live App on Render**](https://vehicle-portal-app.onrender.com/) 
+Access the deployed Vehicle Care Portal App here: [**Live App on Render**](https://vehiclecare-portal.onrender.com/) 
 Demo video:: [**demo**]( https://drive.google.com/file/d/1jaE5fcZY8DXL1b7vj4Jq1IsLIubGRuMy/view?usp=sharing/)
 
 ---
